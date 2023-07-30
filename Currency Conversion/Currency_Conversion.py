@@ -113,7 +113,9 @@ def get_data(identifier: str, target_currency: str = None) -> pd.DataFrame:
         print(error_message)
     
     return get_data_df
-    
+
+
+# call the created function here
 
 
 
