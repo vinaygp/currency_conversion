@@ -14,7 +14,7 @@ from io import StringIO
 def fetch_data_from_url(url: str) -> pd.DataFrame:
     """
     Parameters:
-    url (str) : It is used in requests to get the xml data
+    url (str) : It is used in requests to get the xml data.
     
     Returns:
     pd.DataFrame : It should give thedataframe based on given Url
@@ -35,7 +35,7 @@ def fetch_data_from_url(url: str) -> pd.DataFrame:
                 obs_value = obs.find('generic:ObsValue', namespaces=nsmap).get('value')
                 data_df.loc[len(data_df)] = [dimension_value, float(obs_value)]
         else:
-            print("Error occurred: {} ".format(response.content))
+            print("Error occurred in get request for fetch data from url: {} ".format(response.content))
         
     except Exception as e:
         error_message = "Exception occurred while fetching data: " + str(e)
